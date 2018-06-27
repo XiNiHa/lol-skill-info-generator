@@ -6,22 +6,22 @@
     <div v-if="currentChampion !== undefined" class="skills-wrapper">
       <div v-if="!skillsMasterOrder.includes(-1)" class="skills-master-order">
         <div class="skill-wrapper">
-          <img :src="'https://ddragon.leagueoflegends.com/cdn/8.12.1/img/spell/' + currentChampion.spells[skillsMasterOrder[0]].image.full" class="skill-icon">
+          <img :src="'https://ddragon.leagueoflegends.com/cdn/8.13.1/img/spell/' + currentChampion.spells[skillsMasterOrder[0]].image.full" class="skill-icon">
           <div class="skill-letter">{{ skillNumToLetter(skillsMasterOrder[0]) }}</div>
         </div>
         <span>></span>
         <div class="skill-wrapper">
-          <img :src="'https://ddragon.leagueoflegends.com/cdn/8.12.1/img/spell/' + currentChampion.spells[skillsMasterOrder[1]].image.full" class="skill-icon">
+          <img :src="'https://ddragon.leagueoflegends.com/cdn/8.13.1/img/spell/' + currentChampion.spells[skillsMasterOrder[1]].image.full" class="skill-icon">
           <div class="skill-letter">{{ skillNumToLetter(skillsMasterOrder[1]) }}</div>
         </div>
         <span>></span>
         <div class="skill-wrapper">
-          <img :src="'https://ddragon.leagueoflegends.com/cdn/8.12.1/img/spell/' + currentChampion.spells[skillsMasterOrder[2]].image.full" class="skill-icon">
+          <img :src="'https://ddragon.leagueoflegends.com/cdn/8.13.1/img/spell/' + currentChampion.spells[skillsMasterOrder[2]].image.full" class="skill-icon">
           <div class="skill-letter">{{ skillNumToLetter(skillsMasterOrder[2]) }}</div>
         </div>
         <span>></span>
         <div class="skill-wrapper">
-          <img :src="'https://ddragon.leagueoflegends.com/cdn/8.12.1/img/spell/' + currentChampion.spells[skillsMasterOrder[3]].image.full" class="skill-icon">
+          <img :src="'https://ddragon.leagueoflegends.com/cdn/8.13.1/img/spell/' + currentChampion.spells[skillsMasterOrder[3]].image.full" class="skill-icon">
           <div class="skill-letter">{{ skillNumToLetter(skillsMasterOrder[3]) }}</div>
         </div>
       </div>
@@ -58,13 +58,13 @@ export default {
   },
   watch: {
     champion () {
-      Axios.get('https://ddragon.leagueoflegends.com/cdn/8.12.1/data/ko_KR/champion/<name>.json'.replace(/<name>/, this.champion)).then(res => {
+      Axios.get('https://ddragon.leagueoflegends.com/cdn/8.13.1/data/ko_KR/champion/<name>.json'.replace(/<name>/, this.champion)).then(res => {
         this.currentChampion = res.data.data[this.champion]
       })
     }
   },
   mounted () {
-    Axios.get('https://ddragon.leagueoflegends.com/cdn/8.12.1/data/ko_KR/champion.json').then(res => {
+    Axios.get('https://ddragon.leagueoflegends.com/cdn/8.13.1/data/ko_KR/champion.json').then(res => {
       this.champions = res.data.data
     })
   },
